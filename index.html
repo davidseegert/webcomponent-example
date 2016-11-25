@@ -1,0 +1,19 @@
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <!-- fallback for older browsers -->
+        <script src="js/webcomponents-lite.min.js"></script>
+        <script src="js/custom-elements.min.js" charset="utf-8"></script>
+        <script src="js/shadydom.min.js" charset="utf-8"></script>
+        <script src="js/shadycss.min.js" charset="utf-8"></script>
+
+        <link rel="import" href="x-button.html">
+        <meta charset="utf-8">
+        <title>Custom Element</title>
+      </head>
+      <body>
+        <x-button id="my-x-button" message="Hello World!"></x-button>
+        <!-- Another Button to test CSS scoping. It also changes the message value -->
+        <button type="button" name="button" onClick="document.getElementById('my-x-button').setAttribute('message',Math.random())" >Real Button</button>
+      </body>
+    </html>
