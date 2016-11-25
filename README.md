@@ -10,7 +10,7 @@ This basic example shows the usage of webcomponents. It uses the webcomponents v
 ### x-button.html
 
 ``` html
-<template id="templateTest">
+<template id="x-button-template">
   <button id="button">Hallo</button>
   <style media="screen">
     /* Adding some color to our custom button to see if css scoping is working*/
@@ -24,10 +24,10 @@ This basic example shows the usage of webcomponents. It uses the webcomponents v
 <script>
     // reference to this document; document._currentScript is a fix for older browsers
     var localDoc = (document._currentScript || document.currentScript).ownerDocument;
-    
+
     // CSS scoping fix for older browsers
-    var templateTest = localDoc.querySelector('#templateTest');
-    ShadyCSS.prepareTemplate(templateTest, 'x-toggle');
+    var templateTest = localDoc.querySelector('#x-button-template');
+    ShadyCSS.prepareTemplate(templateTest, 'x-button');
 
     class xButton extends HTMLElement{
       constructor(){
@@ -36,7 +36,7 @@ This basic example shows the usage of webcomponents. It uses the webcomponents v
         // create shadow dom
         this.shadow = this.attachShadow({mode: 'open'});
         // select template by id
-        var template = localDoc.querySelector('#templateTest');
+        var template = localDoc.querySelector('#x-button-template');
         // defining self to call "this" from anonymous functions
         var self = this;
         // append template to shadow-dom
